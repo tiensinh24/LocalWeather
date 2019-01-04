@@ -1,3 +1,6 @@
-FROM duluca/minimal-node-web-server:8.11.1
-WORKDIR /usr/src/app
+FROM tiensinh24/local-weather:latest
+WORKDIR /src/app
 COPY dist public
+RUN npm install
+ENV NODE_ENV=production
+RUN  npm build
